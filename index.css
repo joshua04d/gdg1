@@ -1,0 +1,632 @@
+/* Navbar Icons */
+#live {
+    color: #33ff00;
+  }
+  
+  /* Resetting default styles for all elements */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global styles for the entire page */
+  body {
+      font-family: "Poppins", sans-serif;
+    --color1: #FFF ;
+    --color2: #181818 ;
+    background-image: url('sep09.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+     background-attachment: fixed;
+  }
+  
+
+  
+  
+  /* slider */
+  .banner{
+    width:100%;
+    height: 100vh;
+    position:relative;
+  /* margin-top: 5%; */
+  
+  }
+  
+  .slider {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    position: absolute;
+    top: 35%; /* Adjust this value to reduce or increase the distance */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+  
+  #slideImg{
+    width: 100%;
+    height: 100vh;
+    animation: zoom 3s linear infinite; 
+  }
+  
+  
+  /* black tint */
+  
+  
+  
+  /* Styling for the navigation bar */
+  .nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    /* background-color: rgba(0, 0, 0, 0.9);  */
+    padding: 18px 48px;
+    margin-top: 10px; /* Add this line to set the margin from the top */
+}
+  /* Styling for the logo image */
+  .logo img {
+    width: 140px;
+  }
+  
+  /* Styling for the navigation menu */
+  .menu {
+    display: flex;
+  }
+  
+  .menu li {
+    padding-left: 30px;
+  }
+  
+  .menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  /* Underline effect on navigation links */
+  
+  /* Original hover effect: Underline on hover */
+  .menu li a:hover:after {
+    width: 100%;
+  }
+  
+  /* New hover effect: Line above on hover with slower animation from the center */
+  .menu li a {
+    position: relative;
+  }
+  
+  .menu li a::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Position it vertically in the middle of the link */
+    left: 0;
+    width: 0;
+    height: 5px; /* Adjust the thickness of the line */
+    background-color: #33ff00; /* Change to the desired line color */
+    border-radius: 9px;
+    transition: width 0.7s ease-in-out, transform 0.3s ease-in-out; /* Slower transition duration */
+    transform-origin: center; /* Set the transform origin to the center */
+    transform: scaleX(0); /* Start with no width (hidden) */
+  }
+  
+  .menu li a:hover::before {
+    width: 100%;
+    transform: scaleX(1); /* Scale horizontally from 0 to 1 (full width) */
+  }
+  
+  
+  /* Styling for the open and close menu buttons */
+  .open-menu, .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+  }
+  
+  .open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .close-menu {
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Checkbox for mobile menu toggle */
+  #check {
+    display: none;
+  }
+  
+  /* Media query for mobile menu */
+  @media(max-width: 610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {
+        margin-top: 40px;
+    }
+    .menu li a {
+        padding: 10px;
+    }
+    .open-menu, .close-menu {
+        display: block;
+    }
+    #check:checked ~ .menu {
+        right: 0;
+    }
+    .logo {
+      display: flex;
+      justify-content: center; /* Center the logo horizontally */
+      margin-top: 20px; /* Add some top margin for spacing */
+    }
+    .logo img {
+      width: 100px; /* Adjust the logo size as needed */
+    }
+  }
+
+  
+  /* CSS for the welcome box */
+  .welcome-box {
+    background-color: #33ff00;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #fff; /* Add text color */
+}
+
+/* CSS for the heading inside the box */
+.welcome-box h1 {
+    font-size: 24px;
+}
+
+.welcome-box p {
+    text-align: center;
+    font-size: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: floatUpFadeIn 5s ease forwards;
+}
+
+/* Animation keyframes */
+@keyframes floatUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CSS for horizontal sections */
+.horizontal-sections {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Style for each of the three sections */
+.section {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: #fff; /* Add text color */
+}
+
+.left-section {
+    text-align: center;
+}
+/* CSS for the left container animation */
+.left-container-float-up {
+    animation: floatUp 3s ease forwards;
+}
+
+@keyframes floatUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* CSS for the carousel */
+.carousel-container {
+    width: 100%;
+    max-width: 800px; /* Set the maximum width of the carousel */
+    height: 400px; /* Set the fixed height of the carousel */
+    margin: 0 auto; /* Center the carousel horizontally */
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* CSS for the carousel */
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    height: 100%; /* Fill the fixed height of the container */
+}
+
+/* CSS for each carousel slide */
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+/* CSS for the images inside each carousel slide */
+.carousel-slide img {
+    width: 100%;
+    height: 100%; /* Fill the fixed height of the slide */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire slide */
+}
+
+/* CSS for navigation buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.carousel-button.prev {
+    left: 20px;
+}
+
+.carousel-button.next {
+    right: 20px;
+}
+
+main#blocks {
+    position: relative;
+    display: grid;
+    width: 100%;
+    margin: auto;
+    grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 30px;
+  }
+  
+  .head {
+    position: relative;
+    width: 100%;
+    align-self: end;
+    text-align: center;
+    color: #fae100;
+    font-size: 34px;
+    font-weight: bold;
+  }
+  
+  .head::after {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 3px;
+    margin-left: -235px;
+    bottom: 0;
+    background-color: white;
+    transform-origin: left;
+    animation: animate 4.7s ease-in-out infinite; /* Removed the "1" at the end */
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  
+  
+  .gatee_info {
+    position: relative;
+    font-size: 26px;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    color: white;
+  }
+  
+  /* Video Container and Side Containers*/
+  #middle_main {
+    display: grid;
+    margin: auto;
+    width: 80%;
+    justify-content: center;
+    grid-template-columns: 50px 300px 500px 300px 50px;
+    grid-template-rows: 1px 120px 150px 150px 120px 1px;
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    column-gap: 15px;
+  }
+  
+  .left_slidein {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    justify-self: center;
+    align-self: end;
+    width: 275px;
+    height: 210px;
+    font-size: 18px;
+    font-style: bold;
+    text-align: center;
+    padding: 25px;
+    border: 2.5px solid #fae100;
+    color: #fae100;
+    border-radius: 2px;
+    box-shadow: 0 0 15px #fae100;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), black);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  
+  .left_slidein > span {
+    margin-left: 80px;
+  }
+  
+  .right_slidein {
+    grid-column: 4 / 5;
+    grid-row: 4 / 6;
+    width: 275px;
+    height: 210px;
+    font-size: 18px;
+    font-style: bold;
+    text-align: center;
+    border: 2.5px solid #fae100;
+    color: #fae100;
+    padding: 25px;
+    border-radius: 2px;
+    box-shadow: 0 0 15px #fae100;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), black);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  
+  .right_slidein > span {
+    margin-left: 100px;
+  }
+  
+  .video_container {
+    grid-column: 3 / 4;
+    grid-row: 3 / 5;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .video_container iframe {
+    width: 500px;
+    height: 285px;
+  }
+
+  
+.gatee_info{
+    background-color: rgba(36, 32, 32, 0.8); /* Background color with transparency */
+    border: 2px solid transparent; /* Initially, set a transparent border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+    animation: glow 2s infinite alternate; /* Apply the glow animation */
+  }
+  /* about us  */
+  .gatee_infoo{
+    background-color: rgba(36, 32, 32, 0.8); /* Background color with transparency */
+    border: 2px solid transparent; /* Initially, set a transparent border */
+    border-radius: 10px;
+    padding: 52px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+    animation: glow 2s infinite alternate; /* Apply the glow animation */
+  }
+  .gatee_infoo {
+    position: relative;
+    font-size: 26px;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    color: white;
+  }
+
+
+  @keyframes glow {
+    0% {
+      border-color: #00f; /* Initial border color (blue in this example) */
+    }
+    25% {
+      border-color: #e61719;
+    }
+    50% {
+      border-color: #fae100;
+    }
+    100% {
+      border-color: #0f0; /* Final border color (green in this example) */
+    }
+  }
+  
+  /* midsection carasoul */
+.carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    display: none;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+/* Additional styling for carousel navigation (optional) */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 10px;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* footer */
+
+  footer{
+    background-color: rgb(0, 0, 0);
+}
+
+.footerc{
+    width:100%;
+    padding:70px 30px 20px;
+}
+
+.social-links{
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.social-links a i{
+    font-size: 2rem;
+    color:black;
+    opacity: 0.9;
+}
+
+/* hover effect */
+.social-links a:hover{
+    background-color: black;
+    transition: 0.3s;
+}
+
+.social-links a:hover i{
+    color: aliceblue;
+    transition: 0.5s;
+}
+  /*                         */
+ /*                         */
+/*                         */
+.footernavbar ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.footernavbar ul li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: aliceblue;
+    margin: 20px;
+    opacity: 0.7;
+    transition: 0.5s;
+    justify-content: space-between;
+}
+/* hover effect */
+.footernavbar ul li a:hover{
+    opacity: 1;
+}
+
+  /*                         */
+ /*                         */
+/*                         */
+
+.footerpara{
+    text-align: center;
+    color: aliceblue;
+    background-color: rgb(53, 53, 53);
+    /* margin-top: 20px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+@media (max-width: 700px){
+    .footernavbar ul{
+        flex-direction: column;
+    }
+    .footernavbar ul li{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .footerpara{
+        text-align: center;
+        width: 100%;
+    }
+
+    
+}
+
+
+
+.typer{
+    color: #fff;
+}
